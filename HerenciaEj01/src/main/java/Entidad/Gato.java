@@ -9,12 +9,12 @@ package Entidad;
  * @author roser
  */
 public class Gato extends Animal {
-    Gato g = new Gato();
 
-    public Gato() {
+    public Gato(String nombre, String alimento, Integer edad, String raza) {
+        super(nombre, alimento, edad, raza);
     }
     
-    public void Alimento(){
-        System.out.println("Soy un Gato y me alimento de "+g.alimento);
+    public void alimento(){
+        System.out.println("Animal Gato: alimento = "+this.alimento);
     }
 }

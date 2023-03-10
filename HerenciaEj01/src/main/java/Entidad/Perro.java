@@ -9,21 +9,16 @@ package Entidad;
  * @author roser
  */
 public class Perro extends Animal {
-    Perro p = new Perro();
-    
-    //Constructores
-    public Perro() {
-    }
 
     public Perro(String nombre, String alimento, Integer edad, String raza) {
         super(nombre, alimento, edad, raza);
     }
     
     //Metodo alimentarse
-    
     @Override
-    public String alimento(){
-        System.out.println("Soy un Perro y me alimento de "+p.getAlimento());
-        return super.alimento(); 
+    public void alimento(){
+        System.out.println("Animal Perro1 : alimento = "+this.alimento);
+        System.out.println("Animal Perro2 : alimento = "+this.alimento);
+
     }
 }

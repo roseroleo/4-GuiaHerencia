@@ -6,6 +6,8 @@
 package com.mycompany.herenciaej01;
 
 import Entidad.Animal;
+import Entidad.Caballo;
+import Entidad.Gato;
 import Entidad.Perro;
 import java.util.ArrayList;
 
@@ -18,30 +20,19 @@ siguiente:
 public class HerenciaEj01 {
 
     public static void main(String[] args) {
-        ArrayList<Animal> animal = new ArrayList();
         //Declaracion del objeto Perro
-        Animal perro1 = new Animal("Stich","Carnivoro",15,"Doberman");
-        animal.add(perro1);
+        Animal perro1 = new Perro("Stich","Carnivoro",15,"Doberman");
         perro1.alimento();
         
-        Animal perro2 = new Animal("Teddy","Croquetas",10,"Chihuahua");
-        animal.add(perro2);
+        Animal perro2 = new Perro("Teddy","Croquetas",10,"Chihuahua");
         perro2.alimento();
         
         //Declaracion del objeto Gato
-        Animal gato1 = new Animal("Pelusa","Galletas",15,"Siames");
-        animal.add(gato1);
+        Animal gato1 = new Gato("Pelusa","Galletas",15,"Siames");
         gato1.alimento();
         
         //Declaracion del objeto Caballo
-        Animal caballo1 = new Animal("Spark","Pasto",25,"Fino");
-        animal.add(caballo1);
+        Animal caballo1 = new Caballo("Spark","Pasto",25,"Fino");
         caballo1.alimento();
-        
-        //MOstrar listado
-        for (Animal aux : animal) {
-            System.out.println(aux.getClass()+" "+aux.alimento());
-        }
     }
-    
 }

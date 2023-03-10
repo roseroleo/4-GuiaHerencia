@@ -17,8 +17,6 @@ public class Animal {
     protected String raza;
     
     //Constructores
-    public Animal() {
-    }
 
     public Animal(String nombre, String alimento, Integer edad, String raza) {
         this.nombre = nombre;
@@ -27,48 +25,8 @@ public class Animal {
         this.raza = raza;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getAlimento() {
-        return alimento;
-    }
-
-    public void setAlimento(String alimento) {
-        this.alimento = alimento;
-    }
-
-    public Integer getEdad() {
-        return edad;
-    }
-
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
-    }
-
-    @Override
-    public String toString() {
-        return "Animal{" + "alimento=" + alimento + '}';
-    }
-    
-    
-    
     //Metodo para saber de que se alimenta
-    public String alimento(){
-        return alimento;
+    public void alimento(){
     }
     
 }
