@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-package com.mycompany.herenciaej02;
+package com.mycompany.herenciaej03;
 
 import Entidad.Electrodomestico;
 import Entidad.Lavadora;
@@ -15,7 +15,7 @@ import java.util.Scanner;
 Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios para mostrar
 el precio final de los dos electrodomésticos.  
  */
-public class HerenciaEj02 {
+public class HerenciaEj03 {
 
     public static void main(String[] args) {
         Scanner lr = new Scanner(System.in);
