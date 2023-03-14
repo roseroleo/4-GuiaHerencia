@@ -7,6 +7,7 @@ package com.mycompany.herenciaej04;
 import Entidad.CalculosFormas;
 import static Entidad.CalculosFormas.PI;
 import Entidad.Circulo;
+import Entidad.Rectangulo;
 import java.util.Scanner;
 
 /*Se plantea desarrollar un programa que nos permita calcular el área y el perímetro de formas
@@ -22,57 +23,13 @@ resultado final.
 public class HerenciaEj04 {
 
     public static void main(String[] args) {
-        int radio = 0;
-
         //Calculos con el circulo
         Circulo c = new Circulo();
-        System.out.println("Area = "+c.area());
-//        c.perimetro();
+        System.out.println("Area = " + c.area());
+        c.perimetro();
         //Calculos con del rectangulo
         Rectangulo r = new Rectangulo();
-        System.out.println("Area = "+r.area());
-//        r.perimetro();
-    }
-
-    public static class Circulo implements CalculosFormas {
-
-        Scanner lr = new Scanner(System.in);
-
-        @Override
-        public double area() {
-            System.out.println("Ingrese el radio del circulo  ");
-            int radio = lr.nextInt();
-            double area = PI * radio * radio;
-            return area;
-
-        }
-
-        @Override
-        public void perimetro() {
-            
-            double perimetro = 2 * PI * radio;
-            System.out.println("Perimetro = " + perimetro);
-        }
-    }
-
-    public static class Rectangulo implements CalculosFormas {
-
-        Scanner lr = new Scanner(System.in);
-
-        @Override
-        public double area() {
-            System.out.println("Ingrese la base del rectangulo  ");
-            int base = lr.nextInt();
-            System.out.println("Ingrese la altura del rectangulo  ");
-            int altura = lr.nextInt();
-            double area = base * altura;
-            return area;
-        }
-
-        @Override
-        public void perimetro() {
-            double perimetro = base * 2 + altura * 2;
-        }
-
+        System.out.println("Area = " + r.area());
+        r.perimetro();
     }
 }

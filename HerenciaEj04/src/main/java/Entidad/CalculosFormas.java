@@ -18,9 +18,8 @@ resultado final.
 Área rectángulo: base * altura / Perímetro rectángulo: (base + altura) * 2.
  */
 public interface CalculosFormas {
+
     public double area();
     public void perimetro();
     final double PI = 3.1416;
-    
-    
 }
