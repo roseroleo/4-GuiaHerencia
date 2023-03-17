@@ -34,27 +34,16 @@ public class HerenciaExtra01 {
 
     public static void main(String[] args) {
         ServicioAlquiler sA = new ServicioAlquiler();
+        BarcoMotor b = new BarcoMotor();
+        
         Scanner lr = new Scanner(System.in);
         sA.CrearAlquiler();
-        System.out.println("**** ALQUILER DE AMARRES PARA VARCO ***\n");
+        System.out.println("**** ALQUILER DE VARCOS ***\n");
         System.out.println("Ingrese el tipo de barco");
         System.out.println("1- Barco Motor");
         System.out.println("2- Barco Velero");
         System.out.println("3- Barco Yate");
         int resp = lr.nextInt();
-        switch (resp) {
-            case 1:
-//                Barco bM = new BarcoMotor();
-                System.out.println("Valor del alquiler "+sA.alquilerBarco(1));
-                break;
-            case 2:
-                Barco bV = new BarcoVelero();
-                System.out.println("Valor del alquiler "+sA.alquilerBarco(2));
-                break;
-            case 3:
-                Barco bY = new BarcoYate();
-                System.out.println("Valor del alquiler "+sA.alquilerBarco(3));
-                break;
-        }
+        sA.alquilerBarco(resp);
     }
 }

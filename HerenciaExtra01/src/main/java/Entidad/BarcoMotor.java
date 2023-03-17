@@ -1,5 +1,6 @@
 package Entidad;
 
+
 public class BarcoMotor extends Barco {
 
     public Integer potencia;
@@ -20,12 +21,13 @@ public class BarcoMotor extends Barco {
         this.potencia = potencia;
     }
 
+    //Calcular precio base por alquiler    
     @Override
     public double Modulo() {
-        System.out.println("eslora "+super.getEslora());
-        double mMotor = super.getEslora() * 10 + potencia;
+        double mMotor = super.eslora * 10 + potencia;
         return mMotor;
     }
+    
 }
 
 

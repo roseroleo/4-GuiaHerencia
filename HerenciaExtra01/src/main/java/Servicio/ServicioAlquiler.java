@@ -5,7 +5,6 @@
 package Servicio;
 
 import Entidad.Alquiler;
-import Entidad.Barco;
 import Entidad.BarcoMotor;
 import Entidad.BarcoVelero;
 import Entidad.BarcoYate;
@@ -13,77 +12,59 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-/**
- *
- * @author roser
- */
 public class ServicioAlquiler {
 
-        //Crear un listado de alquileres
-        ArrayList<Alquiler> alquiler = new ArrayList<>();
+    //Crear un listado de alquileres
+    ArrayList<Alquiler> alquiler = new ArrayList<>();
+    //Instanciar tipos de barco
+    BarcoMotor m1;  
+    BarcoVelero v1;
+    BarcoYate y1;
     public void CrearAlquiler() {
 
-       
+        //Datos de barcos
+        m1 = new BarcoMotor(85, "Reina Isabel", "M003", 70, 2000);
+        v1 = new BarcoVelero(2, "La Niña", "V002", 30, 2020);
+        y1 = new BarcoYate(300, 12, "La Pinta", "Y001", 20, 2010);
         
-        //Lista de barcos
-        BarcoYate y1 = new BarcoYate(300, 12, "La Pinta", "P0001", 30, 1990);
-        BarcoVelero v1 = new BarcoVelero(2, "La Niña", "V002", 70, 1970);
-        BarcoMotor m1 = new BarcoMotor (85, "Reina Isabel", "M003", 30, 2000);
-        BarcoVelero v2 = new BarcoVelero(1, "La Santa Maria", "V004", 50, 1980);
-        
-        //Lista de alquileres
+        //DAtos de alquileres
+        alquiler.add(new Alquiler("Jose", 1003, "01/03/2023", "20/03/2023", "D", m1));
+        alquiler.add(new Alquiler("Rosa", 1002, "01/02/2023", "25/02/2023", "B", v1));
         alquiler.add(new Alquiler("Juan", 1001, "01/01/2023", "30/01/2023", "A", y1));
-        alquiler.add(new Alquiler("Pedro", 1002, "01/01/2023", "25/01/2023", "B", v1));
-        alquiler.add(new Alquiler("Jose", 1003, "01/01/2023", "20/01/2023", "D", m1));
-        alquiler.add(new Alquiler("Rosa", 1004, "01/01/2023", "15/01/2023", "H", v2));
+        
         //Mostrar el listado
         for (Alquiler aux : alquiler) {
             System.out.println(aux.toString());
-    }
         }
+    }
 
     //Calcular el tiempo de alquiler
-    public long tiempoAlquiler() {
-        Iterator<Alquiler> it = alquiler.iterator();
+    public long tiempoAlquiler(int n) {
         
+        //Dar formato a la fecha y llamar las fechas ingresadas
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaInicial = LocalDate.parse(alquiler.get(n - 1).fechaAlquiler, formatter);
+        LocalDate fechaFinal = LocalDate.parse(alquiler.get(n - 1).fechaDevolucion, formatter);
         
-//        Iterator<Alquiler> it = alquiler.iterator();
-//        
-////        Alquiler a = new Alquiler();
-//        
-//        System.out.println("fecha i "+a.getFechaAlquiler());
-//        
-//        //Dar formato a la fecha y llamar las fechas ingresadas
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//        LocalDate fechaInicial = LocalDate.parse(a.fechaAlquiler.toString(), formatter);
-//        LocalDate fechaFinal = LocalDate.parse(a.fechaDevolucion.toString(), formatter);
-//        //Calcular el tiempo de alquiler
-//        long diasAlquiler = ChronoUnit.DAYS.between(fechaInicial, fechaFinal);
-//        System.out.println("dias alquiler ="+diasAlquiler);
-        return 0;// diasAlquiler;
+        //Calcular el tiempo de alquiler
+        long diasAlquiler = ChronoUnit.DAYS.between(fechaInicial, fechaFinal);
+        return diasAlquiler;
     }
 
     //Calcular el valor del alquiler
-    public double alquilerBarco(int n) {
+    public void alquilerBarco(int n) {
         double valorAlquiler = 0;
+        CrearAlquiler(); //LLamar los datos de alquileres
         if (n == 1) {
-            tiempoAlquiler();
-//            BarcoMotor bM = new BarcoMotor();
-//            
-//            System.out.println("bbb"+bM.toString());
-//            valorAlquiler = bM.Modulo() * this.tiempoAlquiler();
+            valorAlquiler = m1.Modulo() * tiempoAlquiler(n);
         }
         if (n == 2) {
-            BarcoVelero bV = new BarcoVelero();
-            valorAlquiler = bV.Modulo() * this.tiempoAlquiler();
+            valorAlquiler = v1.Modulo() * tiempoAlquiler(n);
         }
         if (n == 3) {
-            BarcoYate bY = new BarcoYate();
-            valorAlquiler = bY.Modulo() * this.tiempoAlquiler();
+            valorAlquiler = y1.Modulo() * tiempoAlquiler(n);
         }
-        return valorAlquiler;
+        System.out.println("Valor del alquiler " + valorAlquiler);
     }
-    
 }

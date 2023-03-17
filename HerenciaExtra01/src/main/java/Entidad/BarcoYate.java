@@ -29,10 +29,11 @@ public class BarcoYate extends Barco {
     public void setNumCamarotes(Integer numCamarotes) {
         this.numCamarotes = numCamarotes;
     }
-
+    
+    //Calcular precio base por alquiler
     @Override
     public double Modulo() {
-        double mYate = getEslora()*10+potencia+numCamarotes;
+        double mYate = super.eslora * 10 + potencia + numCamarotes;
         return mYate;
     }
 }

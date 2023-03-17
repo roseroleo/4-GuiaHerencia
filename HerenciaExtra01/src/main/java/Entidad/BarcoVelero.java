@@ -20,11 +20,11 @@ public class BarcoVelero extends Barco {
         this.numMastiles = numMastiles;
     }
 
+    //Calcular precio base por alquiler
     @Override
     public double Modulo() {
-        System.out.println("Eslora "+getEslora()+" Mastiles = "+numMastiles);
-//        double mVelero = getEslora() * 10 + numMastiles;
-        return 0;
+        double mVelero = super.eslora * 10 + numMastiles;
+        return mVelero;
     }
     
 }

@@ -1,13 +1,10 @@
 package Entidad;
 
-import java.util.Date;
-import java.time.LocalDate;
-
 public abstract class Barco {
     
     public String nombreBarco;
     public String matricula;
-    public Integer eslora;
+    protected int eslora;
     public Integer anio;
 
     public Barco() {
@@ -36,11 +33,11 @@ public abstract class Barco {
         this.matricula = matricula;
     }
 
-    public Integer getEslora() {
+    public int getEslora() {
         return eslora;
     }
 
-    public void setEslora(Integer eslora) {
+    public void setEslora(int eslora) {
         this.eslora = eslora;
     }
 
@@ -52,11 +49,8 @@ public abstract class Barco {
         this.anio = anio;
     }
     
-    //Metodo comun para todos los barcos
-    public abstract double Modulo() ;
-//        double precioBase = eslora*10;
-//        return precioBase;
-//    }
+//    Metodo comun para todos los barcos precio base
+    public abstract double Modulo();
 
     @Override
     public String toString() {
