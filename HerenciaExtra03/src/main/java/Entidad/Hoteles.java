@@ -13,7 +13,12 @@ Nombre del Restaurante, Capacidad del Restaurante, Precio de las Habitaciones.
 Nombre del Restaurante, Capacidad del Restaurante, Cantidad Salones de
 Conferencia, Cantidad de Suites, Cantidad de Limosinas
  */
-public abstract class Hoteles {
+public abstract class Hoteles extends Alojamientos {
+    
+    //Atributos generales de un hotel
+    public String direccion;
+    public String localidad;
+    public String gerente;
     public int cantHab;
     public int numCamas;
     public int cantPisos;
@@ -22,50 +27,20 @@ public abstract class Hoteles {
     public Hoteles() {
     }
 
-    public Hoteles(int cantHab, int numCamas, int cantPisos, double precioHab) {
+    public Hoteles(int cantHab, int numCamas, int cantPisos, double precioHab, Hoteles hoteles, Alojamientos extrahoteleros, String direccion, String localidad, String gerente) {
+        super(hoteles, extrahoteleros, direccion, localidad, gerente);
         this.cantHab = cantHab;
         this.numCamas = numCamas;
         this.cantPisos = cantPisos;
         this.precioHab = precioHab;
     }
 
-    public int getCantHab() {
-        return cantHab;
-    }
-
-    public void setCantHab(int cantHab) {
-        this.cantHab = cantHab;
-    }
-
-    public int getNumCamas() {
-        return numCamas;
-    }
-
-    public void setNumCamas(int numCamas) {
-        this.numCamas = numCamas;
-    }
-
-    public int getCantPisos() {
-        return cantPisos;
-    }
-
-    public void setCantPisos(int cantPisos) {
-        this.cantPisos = cantPisos;
-    }
-
-    public double getPrecioHab() {
-        return precioHab;
-    }
-
-    public void setPrecioHab(double precioHab) {
-        this.precioHab = precioHab;
-    }
-
+   
     @Override
     public String toString() {
         return "Hoteles{" + "cantHab=" + cantHab + ", numCamas=" + numCamas + ", cantPisos=" + cantPisos + ", precioHab=" + precioHab + '}';
     }
-    
+
     //Metodo abstracto
     public abstract void CalcularPrecio();
 }

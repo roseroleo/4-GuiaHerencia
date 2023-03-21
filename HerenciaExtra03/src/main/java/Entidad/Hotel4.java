@@ -22,14 +22,14 @@ public class Hotel4 extends Hoteles {
     public Hotel4() {
     }
 
-    public Hotel4(String gimnasio, String nomRestaurante, int capRestaurante, int cantHab, int numCamas, int cantPisos, double precioHab) {
-        super(cantHab, numCamas, cantPisos, precioHab);
+    public Hotel4(String gimnasio, String nomRestaurante, int capRestaurante, int cantHab, int numCamas, int cantPisos, double precioHab, String nombre, String direccion, String localidad, String gerente) {
+        super(cantHab, numCamas, cantPisos, precioHab, nombre, direccion, localidad, gerente);
         this.gimnasio = gimnasio;
         this.nomRestaurante = nomRestaurante;
         this.capRestaurante = capRestaurante;
     }
 
-    public String isGimnasio() {
+    public String getGimnasio() {
         return gimnasio;
     }
 
