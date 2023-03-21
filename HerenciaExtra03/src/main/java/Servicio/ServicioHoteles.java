@@ -6,6 +6,7 @@ package Servicio;
 
 import Entidad.Alojamientos;
 import Entidad.Hotel4;
+import Entidad.Hoteles;
 import java.util.ArrayList;
 
 /*Precio de las Habitaciones.  
@@ -37,23 +38,77 @@ campo deportivo. Realizar un programa en el que se representen todas las relacio
 descriptas.   
  */
 public class ServicioHoteles {
-    //Crear listado de hoteles de 4 estrellas
-    /*
-    public String nombre;
-    public String direccion;
-    public String localidad;
-    public String gerente;
-    */
-    ArrayList<Alojamientos> alojamientos = new ArrayList<>();
+   
+    ArrayList<Alojamientos> listaAlojamientos = new ArrayList<>();
+    ArrayList<Hoteles> listaHoteles = new ArrayList<>();
     ArrayList<Hotel4> listaH4 = new ArrayList<>();
     public void crearHotelH4(){
         //construimos o solicitamos por teclado los datos del hotel
         /*
+    Alojamientos
+    public Hoteles hoteles;
+    public Extrahotelero extrahoteleros;
+    public String nombre;
+    public String direccion;
+    public String localidad;
+    public String gerente;
+        Hoteles
         protected int cantHab;
-    protected int numCamas;
-    protected int cantPisos;
-    protected double precioHab;
+        protected int numCamas;
+        protected int cantPisos;
+        protected double precioHab;
+            Hotel4
+            public String gimnasio;
+                public String tipoA;
+                public String tipoB;
+            public String nomRestaurante;
+            public int capRestaurante;
+            Hotel5
+            public String gimnasio;
+                public String tipoA;
+                public String tipoB;
+            public String nomRestaurante;
+            public int capRestaurante;
+            Public int cantSalones;
+            public int cantSuites;
+            public int cantLimosinas;
+        Extrahoteleros
+        public boolean privado;
+        public int area;
+            Camping
+            public int cantCarpas;
+            public int cantBaños;
+            public boolean hayRestaurante;
+            Residencias
+            public int cantHabitaciones;
+            public boolean conDescuento;
+            public boolean conCampoDeportivo;
         */
-        listaH4.add(new Hotel4(50,60,5,123));
+    //Crear listado de hoteles de 4 estrellas
+        //Hotel4(String gimnasio, String nomRestaurante, int capRestaurante, int cantHab, int numCamas, int cantPisos, double precioHab)
+        
+        //Agregar alojamientos
+        //Alojamientos(String nombre, String direccion, String localidad, String gerente
+        listaAlojamientos.add("Alojamiento 1","Direccion 1","Localidad 1","Gerente 1");
+        listaHoteles.add(10,13,2,precioHab);
+        listaH4.add(e)
+        
+    /*
+        
+    }
+}        
+        
+    /*
+        
+    }
+}        
+        
+    /*
+        
+    }
+}        
+        
+    /*
+        
     }
 }
